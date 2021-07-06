@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.snoman.mpdemo1010.mapper")//找到mapper因为mapper接口没有实现
 public class Mpdemo1010Application {
 
     public static void main(String[] args) {

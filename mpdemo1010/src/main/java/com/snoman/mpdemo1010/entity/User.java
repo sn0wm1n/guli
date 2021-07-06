@@ -1,9 +1,6 @@
 package com.snoman.mpdemo1010.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -23,5 +20,13 @@ public class User {
 
     @TableField(fill=FieldFill.INSERT_UPDATE)//加insert让他第一次添加也有值
     private Date updateTime;
+
+    @Version
+    private Integer version;//版本号
+
+    @TableLogic
+    private Integer deleted;
+
+
 
 }
