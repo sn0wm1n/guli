@@ -7,6 +7,7 @@ import com.snowman.commonutils.R;
 import com.snowman.eduservice.entity.EduTeacher;
 import com.snowman.eduservice.entity.VO.TeacherQuery;
 import com.snowman.eduservice.service.EduTeacherService;
+import com.snowman.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -64,6 +65,15 @@ public class EduTeacherController {
     ) {
 
         Page<EduTeacher> pageTeacher = new Page<>(current, limit);
+
+        //自定义异常测试
+
+        try {
+            int i=10/0;
+        } catch (Exception e) {
+            throw new GuliException(20001,"执行自定义异常处理");
+        }
+
         teacherService.page(pageTeacher, null);
 
         long total = pageTeacher.getTotal();
