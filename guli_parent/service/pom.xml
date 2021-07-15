@@ -12,6 +12,7 @@
     <artifactId>service</artifactId>
     <modules>
         <module>service_edu</module>
+        <module>service-oss</module>
     </modules>
 
     <properties>

@@ -27,7 +27,8 @@ import java.util.List;
  */
 @Api(tags = "讲师管理")
 @RestController
-@RequestMapping("/eduservice/edu-teacher")
+@RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     //注入service
@@ -82,7 +83,7 @@ public class EduTeacherController {
 
     }
 
-    //4.添加讲师的方法
+    //4.条件查询带分页的方法
     @ApiOperation(value = "条件查询带分页的方法")
     @PostMapping("pageTeacherCondition/{current}/{limit}")
     public R pageTeacherCondition(
@@ -111,6 +112,8 @@ public class EduTeacherController {
         if (!StringUtils.isEmpty(end)) {
             wrapper.le("gmt_modified", end);
         }
+        //排序
+        wrapper.orderByDesc("gmt_create");
 
         teacherService.page(pageTeacher, wrapper);
 //
