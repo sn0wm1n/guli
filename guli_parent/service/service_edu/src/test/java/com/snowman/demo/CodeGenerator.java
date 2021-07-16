@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Test;
 
 /**
- * @author
+ * @author snowman
  * @since 2018/12/13
  */
 public class CodeGenerator {
