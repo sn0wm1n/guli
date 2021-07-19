@@ -4,13 +4,11 @@ package com.snowman.eduservice.controller;
 import com.snowman.commonutils.R;
 import com.snowman.eduservice.entity.subject.OneSubject;
 import com.snowman.eduservice.service.EduSubjectService;
-import com.snowman.eduservice.service.EduTeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

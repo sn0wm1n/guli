@@ -69,11 +69,11 @@ public class EduTeacherController {
 
         //自定义异常测试
 
-        try {
-            int i=10/0;
-        } catch (Exception e) {
-            throw new GuliException(20001,"执行自定义异常处理");
-        }
+//        try {
+//            int i=10/0;
+//        } catch (Exception e) {
+//            throw new GuliException(20001,"执行自定义异常处理");
+//        }
 
         teacherService.page(pageTeacher, null);
 

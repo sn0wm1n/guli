@@ -60,6 +60,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
         //建立一级分类的最终表的id到索引的映射
         HashMap<String,Integer>map1= new HashMap<>();
 
+        //遍历所有一级表把二级表List成员以外的信息加进去
         for (int i = 0; i <oneSubjectList.size(); i++) {
             EduSubject eduSubject = oneSubjectList.get(i);
             OneSubject oneSubject = new OneSubject();
@@ -68,7 +69,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
             map1.put(oneSubject.getId(),i);
 
         }
-
+        //遍历所有二级表，根据map找到对应的一级表把信息添加进去
         for (int i = 0; i < twoSubjectList.size(); i++) {
             EduSubject eduSubject = twoSubjectList.get(i);
             TwoSubject twoSubject = new TwoSubject();
